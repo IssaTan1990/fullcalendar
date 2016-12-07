@@ -82,6 +82,7 @@ function Toolbar(calendar, toolbarOptions) {
 					var button; // the element
 
 					if (buttonName == 'title') {
+						groupChildren = groupChildren.add($('<h2 class="fc-title fc-title-' + position + '">&nbsp;</h2>')); // we always want it to take up height
 						isOnlyButtons = false;
 					}
 					else {
