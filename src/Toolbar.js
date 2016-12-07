@@ -82,7 +82,6 @@ function Toolbar(calendar, toolbarOptions) {
 					var button; // the element
 
 					if (buttonName == 'title') {
-						groupChildren = groupChildren.add($('<h2>&nbsp;</h2>')); // we always want it to take up height
 						isOnlyButtons = false;
 					}
 					else {
@@ -204,7 +203,7 @@ function Toolbar(calendar, toolbarOptions) {
 				}
 
 				if (groupChildren.length > 1) {
-					groupEl = $('<div/>');
+					groupEl = $('<div class="fc-clear"></div>');
 					if (isOnlyButtons) {
 						groupEl.addClass('fc-button-group');
 					}
