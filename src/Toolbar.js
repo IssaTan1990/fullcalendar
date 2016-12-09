@@ -142,6 +142,13 @@ function Toolbar(calendar, toolbarOptions) {
 								tm + '-state-default'
 							];
 
+              if (customButtonProps) {
+                classes.push('custom-button');
+								if (customButtonProps.active) {
+                  classes.push(tm + '-state-active');
+								}
+              }
+
 							button = $( // type="button" so that it doesn't submit a form
 								'<button type="button" class="' + classes.join(' ') + '">' +
 									innerHtml +
@@ -204,7 +211,7 @@ function Toolbar(calendar, toolbarOptions) {
 				}
 
 				if (groupChildren.length > 1) {
-					groupEl = $('<div class="fc-clear"></div>');
+					groupEl = $('<div/>');
 					if (isOnlyButtons) {
 						groupEl.addClass('fc-button-group');
 					}

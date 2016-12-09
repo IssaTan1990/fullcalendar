@@ -29,18 +29,31 @@
 
 /* week and day number styling */
 
-.fc-day-top.fc-other-month {
-	opacity: 0.3;
+.fc-day-top.fc-sat,
+.fc-day-top.fc-sun {
+	color: #ff7878;
 }
 
-.fc-basic-view .fc-week-number,
-.fc-basic-view .fc-day-number {
-	padding: 2px;
+.fc-day-top.fc-other-month {
+	color: #bbb;
 }
 
 .fc-basic-view th.fc-week-number,
 .fc-basic-view th.fc-day-number {
 	padding: 0 2px; /* column headers can't have as much v space */
+}
+
+.fc-basic-view .fc-day-top {
+	padding: 2px;
+}
+
+.fc-basic-view .fc-day-top .fc-day-number {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 50%;
 }
 
 .fc-ltr .fc-basic-view .fc-day-top .fc-day-number { float: right; }
