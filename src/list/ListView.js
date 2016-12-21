@@ -135,7 +135,6 @@ var ListViewGrid = Grid.extend({
 	// returns list of foreground segs that were actually rendered
 	renderFgSegs: function(segs) {
 		segs = this.renderFgSegEls(segs); // might filter away hidden events
-
 		if (!segs.length) {
 			this.renderEmptyMessage();
 		}
@@ -256,7 +255,7 @@ var ListViewGrid = Grid.extend({
 			classes.push('fc-has-url');
 		}
 
-		return '<tr class="' + classes.join(' ') + '">' +
+		return '<div class="' + classes.join(' ') + '">' +
 			(this.displayEventTime ?
 				'<td class="fc-list-item-time ' + view.widgetContentClass + '">' +
 					(timeHtml || '') +
@@ -273,7 +272,10 @@ var ListViewGrid = Grid.extend({
 				'<a' + (url ? ' href="' + htmlEscape(url) + '"' : '') + '>' +
 					htmlEscape(seg.event.title || '') +
 				'</a>' +
-			'</td>' +
+        '<div class="fc-list-item-description"'> +
+          htmlEscape(seg.event.description || '') +
+        '</div>'+
+      '</td>'+
 		'</tr>';
 	}
 
