@@ -255,7 +255,7 @@ var ListViewGrid = Grid.extend({
 			classes.push('fc-has-url');
 		}
 
-		return '<div class="' + classes.join(' ') + '">' +
+		return '<tr class="' + classes.join(' ') + '">' +
 			(this.displayEventTime ?
 				'<td class="fc-list-item-time ' + view.widgetContentClass + '">' +
 					(timeHtml || '') +
@@ -272,7 +272,7 @@ var ListViewGrid = Grid.extend({
 				'<a' + (url ? ' href="' + htmlEscape(url) + '"' : '') + '>' +
 					htmlEscape(seg.event.title || '') +
 				'</a>' +
-        '<div class="fc-list-item-description"'> +
+        '<div class="fc-list-item-description fc-list-item-after">' +
           htmlEscape(seg.event.description || '') +
         '</div>'+
       '</td>'+
